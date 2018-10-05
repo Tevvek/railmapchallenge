@@ -4,6 +4,10 @@
 
 export const environment = {
   production: false
+
+  // mapbox: {
+  //   accessToken: 'pk.eyJ1IjoidGV2dmVrIiwiYSI6ImNqbXc2MjBvZjE3cHcza3F5bGt6cGk2bnQifQ.Eg0yKWIiP2OeJss90olzEQ'
+  // }
 };
 
 /*

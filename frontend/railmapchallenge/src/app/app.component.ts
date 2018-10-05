@@ -1,6 +1,5 @@
 import { Component, OnInit} from '@angular/core';
-import * as L from 'leaflet';
-import { Icon, icon, Marker, marker } from 'leaflet';
+import * as mapbox from 'mapbox-gl';
 
 @Component({
   selector: 'app-root',
@@ -9,42 +8,29 @@ import { Icon, icon, Marker, marker } from 'leaflet';
 })
 export class AppComponent implements OnInit{
   title = 'app';
-  cityCenter = [41.390205, 2.154007];
-  map:any; // leaflet map
-
-  private defaultIcon: Icon = icon({
-    iconUrl: 'assets/leaflet/marker-icon.png',
-    shadowUrl: 'assets/leaflet/marker-shadow.png'
-  }); // fix for markers
+  cityCenter = [2.100792, 41.364409];
+  map:any;
 
   ngOnInit() {
-    this.overrideMarkersForFixing();
-    this.initMap();
-    this.setOnRightClickEvent();
-    // this was a test
-    // var marker = L.marker(this.cityCenter).addTo(map);
+    this.setMapboxMap();
+  }
+
+  private setMapboxMap() {
+    mapbox.accessToken='pk.eyJ1IjoidGV2dmVrIiwiYSI6ImNqbXc2MjBvZjE3cHcza3F5bGt6cGk2bnQifQ.Eg0yKWIiP2OeJss90olzEQ';
+    var map = new mapbox.Map({
+        container: 'map', // id del elemento HTML que contendrá el mapa
+        style: 'mapbox://styles/mapbox/light-v9', // Ubicación del estilo
+        center: this.cityCenter, // Ubicación inicial
+        zoom: 13, // Zoom inicial
+        bearing: -45, // Ángulo de rotación inicial
+        hash: true // Permite ir guardando la posición del mapa en la URL
+    });
   }
   
-  private overrideMarkersForFixing() {
-    Marker.prototype.options.icon = this.defaultIcon;
-  }
-
-  private initMap() {
-    var map = L.map('map').setView(this.cityCenter, 19);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 19,  
-      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-    }).addTo(map);
-    this.map = map;
-  }
-
-  private setOnRightClickEvent() {
-    this.map.on("contextmenu", (event) => {
-      this.map.setZoom(18);
-      console.log("user right-clicked on map coordinates: " + event.latlng.toString());
-      L.marker(event.latlng).addTo(this.map);
-    });
-
-  }
+  // private setOnRightClickEvent() {
+  //   this.map.on("contextmenu", (event) => {
+  //     console.log("user right-clicked on map coordinates: " + event.latlng.toString());
+  //   });
+  // }
 
 }
