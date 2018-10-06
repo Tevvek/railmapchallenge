@@ -1,6 +1,6 @@
 <div id="map"></div>
 <div id="mainTypes" style="display: none">
-    <div id="typeButton">TIPUS</div>
+    <div id="typeButton">Tipus</div>
     <div id="types">
         <div id="upper" class="contentType">
             <div class="upperType">
@@ -17,9 +17,10 @@
             </div>
         </div>
         <div id="bottom" class="contentType">
-            <div class="upperType">
-                <img src="assets/imgs/TramBlanc.png" alt="">
-                <p>TRAM</p>
+            <div id="tram-container" class="upperType">
+                <img *ngIf="tramBlanco" src="assets/imgs/TramBlanc.png" alt="">
+                <img *ngIf="!tramBlanco" src="assets/imgs/TramVerd.png" alt="">
+                <p id="tram-text">TRAM</p>
             </div>
             <div class="upperType">
                 <img src="assets/imgs/MetroBlanc.png" alt="">
@@ -30,8 +31,16 @@
                 <p>BUS</p>
             </div>
         </div>
-        <div id="option">
-            <button id="optionBtn">MARCAR ORIGEN</button>
+    </div>
+</div>
+<div id="origenFinal" style="display:none">
+    <div id="origenFinal__label">Itinerari</div>
+    <div id="origenFinal__inputs">
+        <div id="origen" class="input__container">
+            <button class="button_input" id="origen__input" name="origen__input">{{selectedOrigen ? '&#10004;' : 'Origen'}}</button>
+        </div>
+        <div id="destino" class="input__container">
+            <button class="button_input" id="destino__input" name="destino__input">{{selectedDestino ? '&#10004;' : 'Destino'}}</button>
         </div>
     </div>
 </div>

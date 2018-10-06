@@ -39,8 +39,12 @@
     color: white;
     font-size: 1.2em;
     justify-content: space-evenly;
+    cursor: pointer;
     img {
         width: 75%;
+    }
+    p {
+        cursor: pointer;
     }
 }
 .contentType {
@@ -69,4 +73,69 @@
 
 .desplegado {
     margin-right: 0px !important;
+}
+
+.my-icon {
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    color: white;
+  }
+
+.text-green {
+    color: #019f92;
+}
+
+.background-green {
+    background: white;
+}
+
+#origenFinal {
+    display: flex !important;
+    margin-right: -200px;
+    transition: 1s margin;
+    #origenFinal__label {
+        writing-mode: vertical-rl;
+        background: #d1d3d4;
+        font-size: 1.4em;
+        font-weight: bold;
+        color: white;
+        padding: 10px;
+        box-sizing: content-box;
+        border-bottom-left-radius: 25%;
+        border-top-left-radius: 25%;
+    }
+    #origenFinal__inputs {
+        width: 200px;
+        background: #d1d3d4;
+        color: white;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .input__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .input__label {
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+        .button_input {
+            outline: none;
+            height: 65px;
+            width: 65px;
+            border: none;
+            border-radius: 50%;
+            background: #f6f7f4;
+            color: #d1d3d4;
+        }
+    }
+}
+
+.selected_input{
+    background: #a4a4a5 !important;
+    color: white !important;
 }
