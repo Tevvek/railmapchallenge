@@ -2,3 +2,71 @@
     width: 100%;
     height: 100%;
 }
+
+#typeButton {
+    writing-mode: vertical-rl;
+    background: #019f92;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: white;
+    height: 50px;
+    padding: 10px;
+    box-sizing: content-box;
+    border-bottom-left-radius: 25%;
+    border-top-left-radius: 25%;
+}
+
+#types {
+    background: #019f92;
+    padding: 20px;
+}
+
+#upper, #bottom {
+    display: flex;
+}
+
+.upperType {
+    margin-right: 10px;
+    background: #6eb7b0;
+    width: 100px;
+    border-radius: 50%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: 1.2em;
+    justify-content: space-evenly;
+    img {
+        width: 75%;
+    }
+}
+.contentType {
+    padding-bottom: 20px;
+}
+
+#option {
+    display: flex;
+    justify-content: center;
+}
+
+#optionBtn {
+    border: none;
+    outline: none;
+    background: #6eb7b0;
+    color: white;
+    font-weight: bold;
+    font-size: 1.3em;
+    padding: 10px 50px;
+}
+
+#mainTypes {
+    margin-right: -370px;
+    transition: 1s margin;
+}
+
+.desplegado {
+    margin-right: 0px !important;
+}
